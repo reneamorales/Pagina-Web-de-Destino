@@ -6,7 +6,11 @@
 
 :root {
     scroll-behavior: smooth;
+    --color-prin-txt: #37ecba;
+    --color-bord: rgba(34, 100, 185, 0.705);
+    --color-hov-btn: #0000FF;
 }
+
 
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -22,12 +26,12 @@ body {
 }
 
 h1 {
-    color: #37ecba;
+    color: var(--color-prin-txt);
 }
 
 .header {
     height: 100vh;
-    background-image: linear-gradient(to top, rgba(255, 128, 119, 0.5) 0%, rgba(255, 133, 122, 0.5) 0%, rgba(255, 140, 127, 0.5) 21%, rgba(249, 144, 133, 0.5) 52%, rgba(207, 85, 107, 0.5) 78%, rgba(177, 42, 91, 0.5) 100%), url(img/adam-borkowski-DTTMBhjhjhXNnD8-unsplash.jpg);
+    background-image: url(img/adam-borkowski-DTTMBhjhjhXNnD8-unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -58,29 +62,33 @@ h1 {
 }
 
 .hamburguer:hover {
-    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    background: var(--color-hov-btn);
+
 }
 
-#linkedin-sup {
+.logo {
     position: absolute;
-    bottom: 30px;
+    top: 30px;
     left: 30px;
+    width: 50px;
+    height: 50px;
 }
 
 .menu-navegacion {
     position: fixed;
-    top: 0;
-    right: 0;
-    width: 30vw;
-    height: 100%;
+    top: 30px;
+    right: 70px;
+    width: 85%;
+    height: 40px;
     background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
     display: flex;
-    flex-direction: column;
+    flex-direction: initial;
     justify-content: space-evenly;
     align-items: center;
     transition: transform .3s ease-in-out;
-    transform: translate(110%);
+    transform: translate(150%);
     box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+    border-radius: 50px;
 }
 
 .spread {
@@ -90,12 +98,11 @@ h1 {
 .menu-navegacion a {
     color: white;
     text-decoration: none;
+    display: inline;
 }
 
 .nav:hover {
-    color: #37ecba;
-    text-decoration: underline;
-    font-size: 20px;
+    color: var(--color-prin-txt);
 }
 
 .titulo {
@@ -104,8 +111,25 @@ h1 {
 }
 
 .copy {
+    width: 90%;
     font-weight: 300;
     font-size: 25px;
+    margin-top: 45px;
+    margin-bottom: 30px;
+}
+
+.sup-line {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 2px;
+    background: #37ecba;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.correo-contacto {
+    font-size: 20px;
 }
 
 .subtitulo {
@@ -142,6 +166,7 @@ h1 {
 
 .n-service:hover {
     margin-bottom: 7px;
+    color: silver;
 }
 
 .number {
@@ -208,91 +233,141 @@ h1 {
 
 .close {
     position: absolute;
-    color: white;
+    color: var(--color-prin-txt);
     top: 15px;
     right: 15px;
-    width: 40px;
+    font-size: 28px;
     cursor: pointer;
 }
 
-.experts {
+/*--------paquetes--------*/
+.container-paq {
+    width: 100%;
+    background-color: silver;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
-.content-expert {
+.columna {
     width: 30%;
+    margin: 15px;
+    padding: 35px;
     text-align: center;
-    margin-bottom: 20px;
+    border-radius: 5px;
+    background: rgba(228, 228, 228, 0.8);
+    color: rgb(138, 133, 133);
+    border: 2px solid rgb(97, 93, 93);
+    box-shadow: -5px 5px 5px rgb(60, 146, 196);
 }
 
-.cont-expert img {
-    width: 80%;
-    display: block;
-    margin: 0 auto;
-}
-
-.n-expert {
-    display: inline-block;
-    margin-top: 20px;
-    width: 100%;
-    font-weight: 400;
-}
-
-.footer {
-    background-image: url("img/Visions of Grandeur.jpg");
+.columna:hover {
+    background: url("img/Visions of Grandeur.jpg");
     padding-bottom: 0.1px;
+    box-shadow: none;
+    border-color: var(--color-bord);
 }
 
-.footer-content {
+.tittle-paq {
+    background-color: rgb(0, 0, 255);
+    color: aqua;
+}
+
+.columna span {
+    font-size: 50px;
+    color: var(--color-prin-txt);
+    text-decoration: none;
+}
+
+.btn-precio {
+    padding: 10px 40px;
+    background: rgba(13, 83, 173, 0.705);
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid var(--color-bord);
+    border-radius: 5px;
+}
+
+.btn-precio:hover {
+    background: var(--color-hov-btn);
+    border: 2px solid var(--color-hov-btn);
+    border-radius: 5px;
+}
+
+/*---------footer-------------*/
+
+footer {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding-top: 120px;
-    padding-bottom: 40px;
+    height: 300px;
 }
 
-.contact-us {
-    width: 40%;
+.footer-content {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    display: flex;
+}
+
+.logo-info {
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.descripcion {
+    width: 100%;
+    height: 70px;
     color: white;
+    display: block;
+    margin: auto 0;
+}
+
+.logo-inf {
+    width: 60px;
+    height: 60px;
+
 }
 
 .brand {
     font-weight: 500;
     font-size: 40px;
+    display: block;
+    align-items: center;
 }
 
 .brand+p {
-    font-weight: 500;
+    font-weight: 400;
+    display: block;
 }
 
 .social-media {
-    position: absolute;
-    width: 60%;
+    width: 30%;
+    height: 60px;
     display: flex;
     justify-content: flex-end;
 }
 
-.social-media-icon {
+.social-media .icons {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 30px;
     width: 60px;
     height: 60px;
     border: 2px solid rgba(0, 0, 255, 0.515);
     border-radius: 50%;
     text-align: center;
-    color: blue;
+    color: var(--color-hov-btn);
 }
 
-.social-media-icon:hover {
-    background: blue;
+.icons:hover {
+    background: var(--color-hov-btn);
     color: white;
 }
 
-.social-media-icon i {
+.social-media .icons i {
     font-size: 30px;
     line-height: 60px;
 }
@@ -306,147 +381,292 @@ h1 {
     margin-bottom: 60px;
 }
 
-/*--------paquetes--------*/
-
-body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-h2 {
-    font-weight: 300;
-}
-
-p {
-    font-weight: 300;
-}
-
-.container {
-    margin: 0 auto;
-    width: 900px;
-}
-
-.flex {
-    display: flex;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.columna {
-    background: rgba(228, 228, 228, 0.8);
-    color: rgb(138, 133, 133);
-    border: 2px solid rgb(97, 93, 93);
-    margin: 15px;
-    padding: 35px;
-    border-radius: 5px;
-    box-shadow: -5px 5px 5px rgb(60, 146, 196);
-}
-
-.columna:hover {
-    background: url("img/Visions of Grandeur.jpg");
-    padding-bottom: 0.1px;
-    box-shadow: none;
-}
-
-.precio {
-    font-size: 50px;
-    color: aqua;
-    text-decoration: none;
-}
-
-.btn-precio {
-    padding: 10px 40px;
-    background: #0000FF;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    border: 2px solid rgba(34, 100, 185, 0.705);
-    border-radius: 5px;
-}
-
-.btn-precio:hover {
-    background: rgba(13, 83, 173, 0.705);
-    border: 2px solid rgba(7, 81, 179, 0.705);
-    border-radius: 5px;
-}
-
-.tittle-paq {
-    background-color: rgb(0, 0, 255);
-    color: aqua;
-}
-
 
 @media screen and (max-width: 800px) {
+
+    /*header*/
+    .hamburguer {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
     .menu-navegacion {
-        width: 50vw;
+        width: 70%;
+        height: 35px;
     }
+
     .titulo {
-        font-size: 40px;
+        font-size: 24px;
     }
+
+    .copy {
+        font-size: 16px;
+    }
+
+    .correo-contacto {
+        font-size: 20px;
+    }
+
+    .subtitulo {
+        font-size: 30px;
+    }
+
     .contenedor-servicio img {
         width: 80%;
         margin-bottom: 40px;
     }
+
     .checklist-servicio {
         width: 80%;
     }
+
     .service {
         margin-bottom: 30px;
     }
+
+    .img-galeria {
+        width: 40%;
+    }
+
     .agregar-imagen {
         width: 80%;
     }
-    .img-galeria {
-        width: 45%;
+
+    /*paquetes*/
+
+    .columna {
+        width: 40%;
+        padding: 20px;
+        border-radius: 5px;
+        font-size: 12px;
     }
-    .cont-expert {
-        width: 80%;
+
+    .tittle-paq {
+        font-size: 18px;
     }
+
+    .columna span {
+        font-size: 20px;
+    }
+
+    .btn-precio {
+        padding: 5px 20px;
+        font-size: 18px;
+        border-radius: 3px;
+    }
+
+    /*footer*/
     .footer-content {
-        justify-content: center;
+        padding-top: 40px;
+        padding-bottom: 60px;
     }
+
+    .logo-info {
+        width: 70%;
+    }
+
+    .descripcion {
+        width: 80%;
+        height: 100%;
+    }
+
+    .brand {
+        font-size: 36px;
+    }
+
+    .descripcion p {
+        font-size: 14px;
+    }
+
     .social-media {
-        width: 80%;
-        justify-content: space-evenly;
+        width: 30%;
+        height: 70px;
+        align-items: center;
     }
-    .social-media-icon {
-        margin-left: 0;
+
+    .social-media .icons {
+        font-size: 30px;
+        margin: 0 auto;
+        width: 40px;
+        height: 40px;
+
     }
-    .social-media i {
-        margin-left: 0;
-    }
-    .contact-us {
-        text-align: center;
-        width: 80%;
-        margin-bottom: 40px;
+
+    .social-media .icons i {
+        font-size: 28px;
+        line-height: 38px;
     }
 }
 
-@media screen and (max-width: 500px) {
-    .menu-navegacion {
-        width: 65vw;
-    }
+
+@media screen and (max-width: 600px) {
+
     .hamburguer {
-        top: 20px;
-        right: 20px;
+        width: 28px;
+        height: 28px;
     }
+
+    .menu-navegacion {
+        width: 60%;
+        height: 28px;
+        font-size: 10px;
+    }
+
     .titulo {
-        font-size: 30px;
+        font-size: 16px;
     }
+
+    .copy {
+        font-size: 12px;
+    }
+
+    .correo-contacto {
+        font-size: 14px;
+    }
+
     .subtitulo {
+        font-size: 22px;
+    }
+
+    .n-service {
+        font-size: 16px;
+        margin-left: 30px;
+    }
+
+    .service p {
+        font-size: 14px;
+    }
+
+    /*galeria*/
+    .img-galeria {
+        width: 80%;
+    }
+
+    .agregar-imagen {
+        width: 80%;
+    }
+
+    /*paquetes*/
+
+    .container-paq {
+        flex-wrap: wrap;
+    }
+
+    .tittle-paq {
+        font-size: 25px;
+    }
+
+    .columna span {
         font-size: 30px;
     }
-    .agregar-imagen {
-        width: 95%;
+
+    .columna {
+        width: 80%;
+        padding: 30px;
+        margin: 20px auto;
+        font-size: 20px;
     }
-    .img-galeria {
-        width: 95%;
+
+    .btn-precio {
+        padding: 10px 40px;
+        font-size: 20px;
+        border-radius: 5px
     }
-    .social-media {
+
+    /*footer*/
+    .footer {
+        height: 60px;
+    }
+
+    .footer-content {
+        padding-top: 60px;
+        padding-bottom: 10px;
+        display: block;
+    }
+
+    .logo-info {
         width: 100%;
     }
-    .contact-us {
-        width: 90%;
+
+    .descripcion {
+        width: 80%;
+        height: 35px;
     }
+
+    .brand {
+        font-size: 20px;
+    }
+
+    .brand p {
+        font-size: 10px;
+    }
+
+    .social-media {
+        width: 100%;
+        height: 45px;
+        margin-top: 20px;
+        text-align: center;
+        display: flow-root;
+    }
+
+    .social-media .icons {
+        width: 35px;
+        height: 35px;
+    }
+
+    .social-media .icons i {
+        font-size: 24px;
+        line-height: 5px;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+
+    .menu-navegacion {
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 5px;
+    }
+
+    /*paquetes*/
+
+    .columna {
+        width: 70%;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: 12px;
+    }
+
+    .tittle-paq {
+        font-size: 16px;
+    }
+
+    .columna span {
+        font-size: 30px;
+    }
+
+    .btn-precio {
+        padding: 3px 15px;
+        font-size: 18px;
+        border-radius: 3px;
+    }
+
+    .brand {
+        font-size: 18px;
+    }
+
+    .brand+p {
+        font-size: 10px;
+    }
+
 }
